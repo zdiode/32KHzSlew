@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+C	C:\Program Files\MPLAB\P12C508A.INC	65;"	q	line:65
+CLK_IN	C:\32KHz12C508\slew.asm	61;"	d	line:61
+CLK_OUT	C:\32KHz12C508\slew.asm	62;"	d	line:62
+ClockHi	C:\32KHz12C508\slew.asm	82;"	l	line:82
+ClockLow	C:\32KHz12C508\slew.asm	87;"	l	line:87
+DC	C:\Program Files\MPLAB\P12C508A.INC	64;"	q	line:64
+F	C:\Program Files\MPLAB\P12C508A.INC	45;"	q	line:45
+FSR	C:\Program Files\MPLAB\P12C508A.INC	53;"	q	line:53
+GPIO	C:\Program Files\MPLAB\P12C508A.INC	55;"	q	line:55
+GPWUF	C:\Program Files\MPLAB\P12C508A.INC	59;"	q	line:59
+INDF	C:\Program Files\MPLAB\P12C508A.INC	49;"	q	line:49
+Loop	C:\32KHz12C508\slew.asm	81;"	l	line:81
+NOT_GPPU	C:\Program Files\MPLAB\P12C508A.INC	70;"	q	line:70
+NOT_GPWU	C:\Program Files\MPLAB\P12C508A.INC	69;"	q	line:69
+NOT_PD	C:\Program Files\MPLAB\P12C508A.INC	62;"	q	line:62
+NOT_TO	C:\Program Files\MPLAB\P12C508A.INC	61;"	q	line:61
+OSCCAL	C:\Program Files\MPLAB\P12C508A.INC	54;"	q	line:54
+OSCFST	C:\Program Files\MPLAB\P12C508A.INC	80;"	q	line:80
+OSCSLW	C:\Program Files\MPLAB\P12C508A.INC	81;"	q	line:81
+PA0	C:\Program Files\MPLAB\P12C508A.INC	60;"	q	line:60
+PCL	C:\Program Files\MPLAB\P12C508A.INC	51;"	q	line:51
+PS0	C:\Program Files\MPLAB\P12C508A.INC	76;"	q	line:76
+PS1	C:\Program Files\MPLAB\P12C508A.INC	75;"	q	line:75
+PS2	C:\Program Files\MPLAB\P12C508A.INC	74;"	q	line:74
+PSA	C:\Program Files\MPLAB\P12C508A.INC	73;"	q	line:73
+STATUS	C:\Program Files\MPLAB\P12C508A.INC	52;"	q	line:52
+Start	C:\32KHz12C508\slew.asm	74;"	l	line:74
+T0CS	C:\Program Files\MPLAB\P12C508A.INC	71;"	q	line:71
+T0SE	C:\Program Files\MPLAB\P12C508A.INC	72;"	q	line:72
+TMR0	C:\Program Files\MPLAB\P12C508A.INC	50;"	q	line:50
+W	C:\Program Files\MPLAB\P12C508A.INC	44;"	q	line:44
+Z	C:\Program Files\MPLAB\P12C508A.INC	63;"	q	line:63
+_CP_OFF	C:\Program Files\MPLAB\P12C508A.INC	100;"	q	line:100
+_CP_ON	C:\Program Files\MPLAB\P12C508A.INC	99;"	q	line:99
+_ExtRC_OSC	C:\Program Files\MPLAB\P12C508A.INC	106;"	q	line:106
+_IntRC_OSC	C:\Program Files\MPLAB\P12C508A.INC	105;"	q	line:105
+_LP_OSC	C:\Program Files\MPLAB\P12C508A.INC	103;"	q	line:103
+_MCLRE_OFF	C:\Program Files\MPLAB\P12C508A.INC	98;"	q	line:98
+_MCLRE_ON	C:\Program Files\MPLAB\P12C508A.INC	97;"	q	line:97
+_WDT_OFF	C:\Program Files\MPLAB\P12C508A.INC	102;"	q	line:102
+_WDT_ON	C:\Program Files\MPLAB\P12C508A.INC	101;"	q	line:101
+_XT_OSC	C:\Program Files\MPLAB\P12C508A.INC	104;"	q	line:104
