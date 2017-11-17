@@ -2,19 +2,32 @@
 MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
 Version=1.0
 [File000]
-Location=slew.err
+Location=C:\GIT-experiment\slew.err
 Folder=Intermediary
 DeviceName=PIC12C508A
 LanguageToolSuiteID={6B3DAA78-59C1-46DD-B6AA-DBDAE4E06484}
 LanguageToolID={49D3CA3F-D9A3-4518-9943-226A347E8CC7}
-LanguageToolLocation=C:\Program Files\Microchip\MPASM Suite\MPAsmWin.exe
+LanguageToolLocation=C:\Program Files (x86)\Microchip\MPASM Suite\MPASMWIN.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
 SOLK=<src>|slew.asm||<obj>||<lib>||<lkr>||
-SuiteArgsString=
+SuiteArgsString=generate-absolute-code
 ToolArgsString=
 TraceCmdString=
 DebugOptions=
 [File001]
+Location=C:\GIT-experiment\slew.o
+Folder=Intermediary
+DeviceName=PIC12C508A
+LanguageToolSuiteID={6B3DAA78-59C1-46DD-B6AA-DBDAE4E06484}
+LanguageToolID={49D3CA3F-D9A3-4518-9943-226A347E8CC7}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\MPASM Suite\MPASMWIN.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|slew.asm||<obj>||<lib>||<lkr>||
+SuiteArgsString=generate-absolute-code
+ToolArgsString=
+TraceCmdString=
+DebugOptions=
+[File002]
 Location=C:\32KHz12C508\slew.cod
 Folder=Output
 DeviceName=PIC12C508A
@@ -27,7 +40,7 @@ SuiteArgsString=
 ToolArgsString=
 TraceCmdString=
 DebugOptions=
-[File002]
+[File003]
 Location=C:\32KHz12C508\slew.hex
 Folder=Output
 DeviceName=PIC12C508A
@@ -40,18 +53,71 @@ SuiteArgsString=
 ToolArgsString=
 TraceCmdString=
 DebugOptions=
-[File003]
-Location=slew.lst
+[File004]
+Location=C:\GIT-experiment\slew.lst
+Folder=Output
+DeviceName=PIC12C508A
+LanguageToolSuiteID={6B3DAA78-59C1-46DD-B6AA-DBDAE4E06484}
+LanguageToolID={96C98149-AA1B-4CF9-B967-FAE79CAB663C}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\MPASM Suite\mplink.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|slew.asm||<obj>||<lib>||<lkr>||
+SuiteArgsString=generate-absolute-code
+ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /aINHX8M /o"$(TARGETBASE).cof"
+TraceCmdString=
+DebugOptions=
+[File005]
+Location=C:\GIT-experiment\slew.hex
 Folder=Output
 DeviceName=PIC12C508A
 LanguageToolSuiteID={6B3DAA78-59C1-46DD-B6AA-DBDAE4E06484}
 LanguageToolID={49D3CA3F-D9A3-4518-9943-226A347E8CC7}
-LanguageToolLocation=C:\Program Files\Microchip\MPASM Suite\MPAsmWin.exe
+LanguageToolLocation=C:\Program Files (x86)\Microchip\MPASM Suite\MPASMWIN.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
 SOLK=<src>|slew.asm||<obj>||<lib>||<lkr>||
-SuiteArgsString=
+SuiteArgsString=generate-absolute-code
 ToolArgsString=
 TraceCmdString=
 DebugOptions=
+[File006]
+Location=C:\GIT-experiment\slew.cof
+Folder=Output
+DeviceName=PIC12C508A
+LanguageToolSuiteID={6B3DAA78-59C1-46DD-B6AA-DBDAE4E06484}
+LanguageToolID={96C98149-AA1B-4CF9-B967-FAE79CAB663C}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\MPASM Suite\mplink.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|slew.asm||<obj>||<lib>||<lkr>||
+SuiteArgsString=generate-absolute-code
+ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /aINHX8M /o"$(TARGETBASE).cof"
+TraceCmdString=
+DebugOptions=
+[File007]
+Location=C:\GIT-experiment\slew.cod
+Folder=Output
+DeviceName=PIC12C508A
+LanguageToolSuiteID={6B3DAA78-59C1-46DD-B6AA-DBDAE4E06484}
+LanguageToolID={96C98149-AA1B-4CF9-B967-FAE79CAB663C}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\MPASM Suite\mplink.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|slew.asm||<obj>||<lib>||<lkr>||
+SuiteArgsString=generate-absolute-code
+ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /aINHX8M /o"$(TARGETBASE).cof"
+TraceCmdString=
+DebugOptions=
+[File008]
+Location=C:\GIT-experiment\slew.map
+Folder=Output
+DeviceName=PIC12C508A
+LanguageToolSuiteID={6B3DAA78-59C1-46DD-B6AA-DBDAE4E06484}
+LanguageToolID={96C98149-AA1B-4CF9-B967-FAE79CAB663C}
+LanguageToolLocation=C:\Program Files (x86)\Microchip\MPASM Suite\mplink.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|slew.asm||<obj>||<lib>||<lkr>||
+SuiteArgsString=generate-absolute-code
+ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /aINHX8M /o"$(TARGETBASE).cof"
+TraceCmdString=
+DebugOptions=
 [TOOL_LOC_STAMPS]
-tool_loc{49D3CA3F-D9A3-4518-9943-226A347E8CC7}=C:\Program Files\Microchip\MPASM Suite\MPAsmWin.exe
+tool_loc{49D3CA3F-D9A3-4518-9943-226A347E8CC7}=C:\Program Files (x86)\Microchip\MPASM Suite\MPASMWIN.exe
+tool_loc{96C98149-AA1B-4CF9-B967-FAE79CAB663C}=C:\Program Files (x86)\Microchip\MPASM Suite\mplink.exe

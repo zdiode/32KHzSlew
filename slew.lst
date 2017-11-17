@@ -1,4 +1,4 @@
-MPASM  5.06                          SLEW.ASM   6-11-2007  16:58:00         PAGE  1
+MPASM  5.51                          SLEW.ASM   11-17-2017  14:52:54         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -28,87 +28,95 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00022 ;*
                       00023 ;*     Frequency:   4 MHz internal clock
                       00024 ;*
-                      00025 ;*     Last Changed:  June 11, 2007 
+                      00025 ;*     Last Changed:  November 17, 2017 
                       00026 ;*
                       00027 ;*
                       00028 ;*     1.0     First release
-                      00029 ;*
+                      00029 ;*     1746a   Changed a line as a GIT experiment.
                       00030 ;*
-                      00031 ;****************************
-                      00032 ;
-                      00033 ;****************************
-                      00034 ; Configuration fuses, See page 37
-                      00035 ;
-                      00036 #include        "p12C508A.inc"
+                      00031 ;*
+                      00032 ;****************************
+                      00033 ;
+                      00034 ;****************************
+                      00035 ; Configuration fuses, See page 37
+                      00036 ;
+                      00037 #include        "p12C508A.inc"
                       00001         LIST
-                      00002 ; P12C508A.INC  Standard Header File, Version 1.00    Microchip Technology, Inc.
-                      00114         LIST
-0FFF   0FEA           00037         __config _MCLRE_OFF & _CP_OFF & _WDT_OFF & _IntRC_OSC
-                      00038                               ; Internal RC oscillator, watchdog timer off,
-                      00039                               ; and code protect on.
-                      00040 
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC12C508A processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00158         LIST
+0FFF   0FEA           00038         __config _MCLRE_OFF & _CP_OFF & _WDT_OFF & _IntRC_OSC
+                      00039                               ; Internal RC oscillator, watchdog timer off,
+                      00040                               ; and code protect on.
                       00041 
                       00042 
-                      00043 ;****************************
-                      00044 ; Assembler Switches
-                      00045 ;****************************
-                      00046 ;
-                      00047 ;#define SIM                   ; adjustment for simulation
-                      00048 ;
-                      00049 ;****************************
-                      00050 ; Assembler controls
-MPASM  5.06                          SLEW.ASM   6-11-2007  16:58:00         PAGE  2
+                      00043 
+                      00044 ;****************************
+MPASM  5.51                          SLEW.ASM   11-17-2017  14:52:54         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                      00051 ;****************************
-                      00052      ERRORLEVEL -305          ; eliminate nuisance messages
-                      00053      ERRORLEVEL -224          ; do not flag the TRIS and OPTION instructions
-                      00054      ERRORLEVEL -306          ; eliminate nuisance messages
-                      00055 ;
-                      00056 ;****************************
-                      00057 ; Memory
-                      00058 ;****************************
-                      00059 ; none used
-                      00060 ;
-                      00061 #define CLK_IN  3             ; clock in on GPIO, pin 4
-                      00062 #define CLK_OUT 1             ; clock out on GPIO, pin 6
-                      00063 ;
-                      00064 ;****************************
-                      00065 ;*     Reset Vector
-                      00066 ;****************************
-0000                  00067      ORG      0
-0000   0025           00068      movwf    OSCCAL
-0001   0AF8           00069      goto     Start
-                      00070 ;
-                      00071 ;                             leave space for modifying code
-                      00072 ;
-00F8                  00073      org      0xf8
-00F8                  00074 Start:
-00F8   0CBA           00075      movlw    0xba            ; 32:1 prescaler on WDT, TMR0 disabled, Pullups on.
-00F9   0002           00076      option
-00FA   0C08           00077      movlw    0x08            ; all that can be outputs, are.
-00FB   0006           00078      tris     GPIO
-00FC   0766           00079      btfss    GPIO,CLK_IN     ; start it off
-00FD   0B01           00080      goto     ClockLow        ; start the clock off low
-00FE                  00081 Loop:
-00FE                  00082 ClockHi:
-00FE   0526           00083      bsf      GPIO,CLK_OUT    ; Output clock high
-00FF   0666           00084      btfsc    GPIO,CLK_IN     ; skip when clock goes low
-0100   0AFF           00085      goto     $-1             ; /
-                      00086 ;
-0101                  00087 ClockLow:
-0101   0426           00088      bcf      GPIO,CLK_OUT    ; Output clock low
-0102   0766           00089      btfss    GPIO,CLK_IN     ; skip when clock goes high
-0103   0B02           00090      goto     $-1             ; /
-0104   0526           00091      bsf      GPIO,CLK_OUT    ; Output clock high
-0105   0AFE           00092      goto     Loop
-0106   0AFE           00093      goto     Loop
-                      00094 
-                      00095          end
-MPASM  5.06                          SLEW.ASM   6-11-2007  16:58:00         PAGE  3
+                      00045 ; Assembler Switches
+                      00046 ;****************************
+                      00047 ;
+                      00048 ;#define SIM                   ; adjustment for simulation
+                      00049 ;
+                      00050 ;****************************
+                      00051 ; Assembler controls
+                      00052 ;****************************
+                      00053      ERRORLEVEL -305          ; eliminate nuisance messages
+                      00054      ERRORLEVEL -224          ; do not flag the TRIS and OPTION instructions
+                      00055      ERRORLEVEL -306          ; eliminate nuisance messages
+                      00056 ;
+                      00057 ;****************************
+                      00058 ; Memory
+                      00059 ;****************************
+                      00060 ; none used
+                      00061 ;
+                      00062 #define CLK_IN  3             ; clock in on GPIO, pin 4
+                      00063 #define CLK_OUT 1             ; clock out on GPIO, pin 6
+                      00064 ;
+                      00065 ;****************************
+                      00066 ;*     Reset Vector
+                      00067 ;****************************
+0000                  00068      ORG      0
+0000   0025           00069      movwf    OSCCAL
+0001   0AF8           00070      goto     Start
+                      00071 ;
+                      00072 ;                             leave space for modifying code
+                      00073 ;
+00F8                  00074      org      0xf8
+00F8                  00075 Start:
+00F8   0CBA           00076      movlw    0xba            ; 32:1 prescaler on WDT, TMR0 disabled, Pullups on.
+00F9   0002           00077      option
+00FA   0C08           00078      movlw    0x08            ; all that can be outputs, are.
+00FB   0006           00079      tris     GPIO
+00FC   0766           00080      btfss    GPIO,CLK_IN     ; start it off
+00FD   0B01           00081      goto     ClockLow        ; start the clock off low
+00FE                  00082 Loop:
+00FE                  00083 ClockHi:
+00FE   0526           00084      bsf      GPIO,CLK_OUT    ; Output clock high
+00FF   0666           00085      btfsc    GPIO,CLK_IN     ; skip when clock goes low
+0100   0AFF           00086      goto     $-1             ; /
+                      00087 ;
+0101                  00088 ClockLow:
+0101   0426           00089      bcf      GPIO,CLK_OUT    ; Output clock low
+0102   0766           00090      btfss    GPIO,CLK_IN     ; skip when clock goes high
+0103   0B02           00091      goto     $-1             ; /
+0104   0526           00092      bsf      GPIO,CLK_OUT    ; Output clock high
+0105   0AFE           00093      goto     Loop
+0106   0AF8           00094      goto     Start           ; changed as a GIT experiment.  Anyway if program flow got here something 
+                            bad happened.
+                      00095 
+                      00096          end
+MPASM  5.51                          SLEW.ASM   11-17-2017  14:52:54         PAGE  3
 
 
 SYMBOL TABLE
@@ -128,6 +136,12 @@ ClockLow                          00000101
 DC                                00000001
 F                                 00000001
 FSR                               00000004
+GP0                               00000000
+GP1                               00000001
+GP2                               00000002
+GP3                               00000003
+GP4                               00000004
+GP5                               00000005
 GPIO                              00000006
 GPWUF                             00000007
 INDF                              00000000
@@ -150,24 +164,43 @@ Start                             000000F8
 T0CS                              00000005
 T0SE                              00000004
 TMR0                              00000001
+TRIS0                             00000000
+TRIS1                             00000001
+TRIS2                             00000002
+TRIS3                             00000003
+TRIS4                             00000004
+TRIS5                             00000005
 W                                 00000000
 Z                                 00000002
+_CONFIG                           00000FFF
 _CP_OFF                           00000FFF
 _CP_ON                            00000FF7
+MPASM  5.51                          SLEW.ASM   11-17-2017  14:52:54         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 _ExtRC_OSC                        00000FFF
+_IDLOC0                           00000200
+_IDLOC1                           00000201
+_IDLOC2                           00000202
+_IDLOC3                           00000203
 _IntRC_OSC                        00000FFE
 _LP_OSC                           00000FFC
 _MCLRE_OFF                        00000FEF
 _MCLRE_ON                         00000FFF
+_OSC_ExtRC                        00000FFF
+_OSC_IntRC                        00000FFE
+_OSC_LP                           00000FFC
+_OSC_XT                           00000FFD
 _WDT_OFF                          00000FFB
 _WDT_ON                           00000FFF
 _XT_OSC                           00000FFD
 __12C508A                         00000001
-MPASM  5.06                          SLEW.ASM   6-11-2007  16:58:00         PAGE  4
 
 
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
-
 
 0000 : XX-------------- ---------------- ---------------- ----------------
 00C0 : ---------------- ---------------- ---------------- --------XXXXXXXX

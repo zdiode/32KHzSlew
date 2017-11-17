@@ -22,10 +22,11 @@
 ;*
 ;*     Frequency:   4 MHz internal clock
 ;*
-;*     Last Changed:  June 11, 2007 
+;*     Last Changed:  November 17, 2017 
 ;*
 ;*
 ;*     1.0     First release
+;*     1746a   Changed a line as a GIT experiment.
 ;*
 ;*
 ;****************************
@@ -90,6 +91,6 @@ ClockLow:
      goto     $-1             ; /
      bsf      GPIO,CLK_OUT    ; Output clock high
      goto     Loop
-     goto     Loop
+     goto     Start           ; changed as a GIT experiment.  Anyway if program flow got here something bad happened.
 
 	 end
