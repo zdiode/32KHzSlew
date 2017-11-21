@@ -92,5 +92,6 @@ ClockLow:
      bsf      GPIO,CLK_OUT    ; Output clock high
      goto     Loop
      goto     Start           ; changed as a GIT experiment.  Anyway if program flow got here something bad happened.
+     goto     ClockLow        ; Changed on the Office PC.
 
 	 end

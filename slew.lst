@@ -1,4 +1,4 @@
-MPASM  5.51                          SLEW.ASM   11-17-2017  14:52:54         PAGE  1
+MPASM  5.51                          SLEW.ASM   11-20-2017  14:13:15         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00042 
                       00043 
                       00044 ;****************************
-MPASM  5.51                          SLEW.ASM   11-17-2017  14:52:54         PAGE  2
+MPASM  5.51                          SLEW.ASM   11-20-2017  14:13:15         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -114,9 +114,16 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0105   0AFE           00093      goto     Loop
 0106   0AF8           00094      goto     Start           ; changed as a GIT experiment.  Anyway if program flow got here something 
                             bad happened.
-                      00095 
-                      00096          end
-MPASM  5.51                          SLEW.ASM   11-17-2017  14:52:54         PAGE  3
+0107   0B01           00095      goto     ClockLow        ; Changed on the Office PC.
+                      00096 
+MPASM  5.51                          SLEW.ASM   11-20-2017  14:13:15         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00097          end
+MPASM  5.51                          SLEW.ASM   11-20-2017  14:13:15         PAGE  4
 
 
 SYMBOL TABLE
@@ -175,7 +182,7 @@ Z                                 00000002
 _CONFIG                           00000FFF
 _CP_OFF                           00000FFF
 _CP_ON                            00000FF7
-MPASM  5.51                          SLEW.ASM   11-17-2017  14:52:54         PAGE  4
+MPASM  5.51                          SLEW.ASM   11-20-2017  14:13:15         PAGE  5
 
 
 SYMBOL TABLE
@@ -204,13 +211,13 @@ MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
 
 0000 : XX-------------- ---------------- ---------------- ----------------
 00C0 : ---------------- ---------------- ---------------- --------XXXXXXXX
-0100 : XXXXXXX--------- ---------------- ---------------- ----------------
+0100 : XXXXXXXX-------- ---------------- ---------------- ----------------
 0FC0 : ---------------- ---------------- ---------------- ---------------X
 
 All other memory blocks unused.
 
-Program Memory Words Used:    17
-Program Memory Words Free:   495
+Program Memory Words Used:    18
+Program Memory Words Free:   494
 
 
 Errors   :     0
